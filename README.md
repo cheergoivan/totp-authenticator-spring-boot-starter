@@ -1,5 +1,5 @@
-# Spring Boot Starter for TOTPAuthenticator
-This is a spring boot starter for [TOTPAuthenticator](https://github.com/cheergoivan/totp-authenticator).
+# Spring Boot Starter for TOTP Authenticator
+This is a spring boot starter for [TOTP Authenticator](https://github.com/cheergoivan/totp-authenticator).
 
 ## Quick start
 ### Add Maven dependency
