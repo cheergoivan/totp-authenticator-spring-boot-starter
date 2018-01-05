@@ -1,0 +1,13 @@
+.metadata
+.project
+.classpath
+.checkstyle
+.settings/
+.externalToolBuilders/
+target/
+bin/
+
+# Intellij
+*.iml
+.idea
+
