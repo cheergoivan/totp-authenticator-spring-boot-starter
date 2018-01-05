@@ -33,7 +33,6 @@ public class TOTPAutoConfiguration {
 	public TOTPAuthenticator totpAuthenticator()
 			throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 		Decoder decoder = new SHA1Decoder();
-		System.out.println(Class.forName(properties.getDecoder()));
 		Object inputDecoder = Class.forName(properties.getDecoder()).newInstance();
 		if (inputDecoder instanceof Decoder) {
 			decoder = Decoder.class.cast(inputDecoder);
