@@ -4,6 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.cheergoivan</groupId>
 	<artifactId>totp-authenticator-spring-boot</artifactId>
+	<description>a spring boot starter for TOTP Authenticator</description>
+	<url>https://github.com/cheergoivan/totp-authenticator-spring-boot-starter</url>
 	<version>1.0</version>
 	<packaging>pom</packaging>
 	<modules>
@@ -14,6 +16,17 @@
 	<properties>
 		<spring-boot.version>1.5.6.RELEASE</spring-boot.version>
 	</properties>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
 
 	<dependencyManagement>
 		<dependencies>
@@ -49,4 +62,75 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>release</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>2.2.1</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>2.9.1</version>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.5</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+	
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<scm>
+		<url>https://github.com/cheergoivan/totp-authenticator-spring-boot-starter</url>
+		<connection>https://github.com/cheergoivan/totp-authenticator-spring-boot-starter.git</connection>
+		<developerConnection>https://github.com/cheergoivan</developerConnection>
+	</scm>
+	<developers>
+		<developer>
+			<name>cheergoivan</name>
+			<email>xiweipen@sina.com</email>
+			<url>https://github.com/cheergoivan</url>
+		</developer>
+	</developers>
+
 </project>
