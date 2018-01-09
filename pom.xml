@@ -4,10 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.cheergoivan</groupId>
 	<artifactId>totp-authenticator-spring-boot</artifactId>
+	<name>totp-authenticator-spring-boot</name>
 	<description>a spring boot starter for TOTP Authenticator</description>
 	<url>https://github.com/cheergoivan/totp-authenticator-spring-boot-starter</url>
 	<version>1.0</version>
 	<packaging>pom</packaging>
+	
 	<modules>
 		<module>totp-authenticator-spring-boot-autoconfigure</module>
 		<module>totp-authenticator-spring-boot-starter</module>
